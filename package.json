@@ -1,0 +1,25 @@
+{
+    "name": "vscode-kmonad",
+    "displayName": "vscode-kmonad",
+    "description": "Kmonad kbd config language",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "kmonad",
+            "aliases": ["kmonad", "kmonad"],
+            "extensions": [".kbd"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "kmonad",
+            "scopeName": "source.kmonad",
+            "path": "./syntaxes/kmonad.tmLanguage.json"
+        }]
+    }
+}

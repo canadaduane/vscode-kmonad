@@ -1,0 +1,125 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "kmonad",
+	"foldingStartMarker": "\\(",
+	"foldingStopMarker": "\\)",
+	"patterns": [
+		{
+			"match": "(;;).*$\\n?",
+			"name": "comment.line.semicolon.kmonad",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.comment.kmonad"
+				}
+			}
+		},
+		{
+			"begin": "#\\|",
+			"end": "\\|#",
+			"name": "comment.block.kmonad"
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(defcfg|defsrc|defalias|deflayer)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "keyword.control.kmonad"
+				}
+			}
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(true|false)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "constant.language.kmonad"
+				}
+			}
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(@[a-z0-9]+)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "variable.language.kmonad"
+				}
+			}
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(XX)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "invalid.illegal.kmonad"
+				}
+			}
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(([0-9]+)|(#((b[01]+)|(o[0-7]+)|(d[0-9]+)|(x[0-9a-fA-F]+)))|\\+nan\\.0|\\+inf\\.0|\\-inf\\.0)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "constant.numeric.kmonad"
+				}
+			}
+		},
+		{
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end"
+				}
+			},
+			"name": "string.quoted.double",
+			"patterns": [
+				{
+					"match": "(\\[abtnre0\"|\\\\])",
+					"name": "constant.character.escape.kmonad"
+				},
+				{
+					"match": "(\\[^abtnre0\"|\\\\])",
+					"name": "invalid.illegal.escape.kmonad"
+				}
+			]
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(input|output|fallthrough|allow-cmd|cmp-seq|cmp-seq-delay|around|layer-toggle|layer-delay|layer-next|layer-switch|layer-add|layer-rem|multi-tap|tap-next|tap-hold|tap-hold-next|tap-next-release|tap-hold-next-release|sticky-key|tap-macro)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "entity.name.function.kmonad"
+				}
+			}
+		},
+		{
+			"match": "(?:^|\\s|[#()\\]\\[{}])(\\\\|\\*|\\+|\\\\\\(|\\\\\\)|grv|1|2|3|4|5|6|7|8|9|0|-|=|bspc|tab|q|w|e|r|t|y|u|i|o|p|\\[|\\]|caps|a|s|d|f|g|h|j|k|l|;|'|ret|lsft|z|x|c|v|b|n|m|,|\\.|/|rsft|lctl|lmet|lalt|spc|ralt|rctl|left|up|down|rght|rmet|cmp|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|f13|f14|f15|esc|ins|del)(?=\\s|[#()\\]\\[{}]|$)",
+			"captures": {
+				"1": {
+					"name": "string.kmonad"
+				}
+			}
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.kmonad",
+					"match": "\\b(-{3,})\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.kmonad",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kmonad",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.kmonad"
+}
