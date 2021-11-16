@@ -3,6 +3,7 @@
     "displayName": "vscode-kmonad",
     "description": "Kmonad kbd config language",
     "version": "0.1.0",
+    "repository": "https://github.com/canadaduane/vscode-kmonad",
     "engines": {
         "vscode": "^1.62.0"
     },
